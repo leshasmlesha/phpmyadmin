@@ -1,18 +1,18 @@
-wget http://archive.ubuntu.com/ubuntu/pool/universe/p/phpmyadmin/phpmyadmin_4.6.6-5.debian.tar.xz
+curl -O http://archive.ubuntu.com/ubuntu/pool/universe/p/phpmyadmin/phpmyadmin_4.6.6-5.debian.tar.xz
 mkdir phpmyadmin
 tar xf phpmyadmin_4.6.6-5.debian.tar.xz -C phpmyadmin
 rm phpmyadmin_4.6.6-5.debian.tar.xz
-wget https://files.phpmyadmin.net/phpMyAdmin/4.8.5/phpMyAdmin-4.8.5-source.tar.xz -O phpmyadmin_4.8.5.orig.tar.xz
+curl https://files.phpmyadmin.net/phpMyAdmin/4.8.5/phpMyAdmin-4.8.5-source.tar.xz -o phpmyadmin_4.8.5.orig.tar.xz
 tar xf phpmyadmin_4.8.5.orig.tar.xz -C phpmyadmin --strip-components=1
-rm phpmyadmin/debian/Truncate-only-long-passwords.patch
+rm phpmyadmin/debian/patches/Truncate-only-long-passwords.patch
 cd phpmyadmin/debian/
-wget https://leshasmlesha.github.io/phpmyadmin/changed/install -p phpmyadmin/debian
-wget https://leshasmlesha.github.io/phpmyadmin/changed/rules -p phpmyadmin/debian
-wget https://leshasmlesha.github.io/phpmyadmin/changed/changelog -p phpmyadmin/debian
-wget https://leshasmlesha.github.io/phpmyadmin/changed/control -p phpmyadmin/debian
+curl -O https://leshasmlesha.github.io/phpmyadmin/changed/install
+curl -O https://leshasmlesha.github.io/phpmyadmin/changed/rules
+curl -O https://leshasmlesha.github.io/phpmyadmin/changed/changelog
+curl -O https://leshasmlesha.github.io/phpmyadmin/changed/control
 cd patches
-wget https://leshasmlesha.github.io/phpmyadmin/changed/series -p phpmyadmin/debian/patches
-wget https://leshasmlesha.github.io/phpmyadmin/changed/debian.patch -p phpmyadmin/debian/patches
+curl -O https://leshasmlesha.github.io/phpmyadmin/changed/series
+curl -O https://leshasmlesha.github.io/phpmyadmin/changed/debian.patch
 cd ../
 rm -rf po
 cp ../po po
