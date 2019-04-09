@@ -1,0 +1,32 @@
+#!/usr/bin/make -f
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+REVISION := $(shell head -1 debian/changelog | sed 's/.*(//;s/).*//;s/.*-//')
+
+%:
+	dh $@ --fail-missing --with sphinxdoc
+
+override_dh_auto_test:
+	# We exclude:
+	# - selenium tests as the setup would be too complex
+	# - some network based tests
+	#LC_ALL=en_US.UTF-8 phpunit --config phpunit.xml.nocoverage --exclude-group selenium --exclude-group network
+
+override_dh_auto_clean:
+
+override_dh_auto_build:
+	make -C doc/ html
+	rm -rf test/selenium
+
+override_dh_install:
+	dh_install
+
+	# Use system tcpdf, gettext, phpseclib
+	rm -rf debian/phpmyadmin/usr/share/phpmyadmin/libraries/tcpdf
+	rm -rf debian/phpmyadmin/usr/share/phpmyadmin/libraries/php-gettext
+	rm -rf debian/phpmyadmin/usr/share/phpmyadmin/libraries/phpseclib
+
+	# include Debian marker in version string
+	sed -ri "/set..PMA_VERSION/ s/'([-0-9a-z.]+)'/'\\1deb$(REVISION)'/" \
+	    debian/phpmyadmin/usr/share/phpmyadmin/libraries/classes/Config.php
