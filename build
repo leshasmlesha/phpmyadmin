@@ -14,9 +14,8 @@ cd patches
 curl -O https://leshasmlesha.github.io/phpmyadmin/changed/series
 curl -O https://leshasmlesha.github.io/phpmyadmin/changed/debian.patch
 cd ../
-rm -rf po
+rm -rf po/*.po
 cp ../po po
-echo '[type: gettext/rfc822deb] templates'>po/POTFILES.in
 cd ..
 dpkg-buildpackage
 cd ../
