@@ -1,5 +1,7 @@
 wget http://archive.ubuntu.com/ubuntu/pool/universe/p/phpmyadmin/phpmyadmin_4.6.6-5.debian.tar.xz
-tar xf phpmyadmin_4.8.5.orig.tar.xz -C phpmyadmin --strip-components=1
+mkdir phpmyadmin
+tar xf phpmyadmin_4.6.6-5.debian.tar.xz -C phpmyadmin --strip-components=1
+rm phpmyadmin_4.6.6-5.debian.tar.xz
 wget https://files.phpmyadmin.net/phpMyAdmin/4.8.5/phpMyAdmin-4.8.5-source.tar.xz -O phpmyadmin_4.8.5.orig.tar.xz
 tar xf phpmyadmin_4.8.5.orig.tar.xz -C phpmyadmin --strip-components=1
 rm phpmyadmin/debian/Truncate-only-long-passwords.patch
