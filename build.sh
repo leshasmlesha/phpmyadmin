@@ -29,7 +29,7 @@ curl -O https://leshasmlesha.github.io/phpmyadmin/changed/series
 curl -O https://leshasmlesha.github.io/phpmyadmin/changed/debian.patch
 cd ../
 rm -rf po/*.po*
-cp ../po po
+cp ../po/* po
 cd ..
 dpkg-buildpackage
 cd ../
