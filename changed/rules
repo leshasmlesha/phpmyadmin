@@ -25,8 +25,4 @@ override_dh_install:
 	# Use system tcpdf, gettext, phpseclib
 	rm -rf debian/phpmyadmin/usr/share/phpmyadmin/libraries/tcpdf
 	rm -rf debian/phpmyadmin/usr/share/phpmyadmin/libraries/php-gettext
-	rm -rf debian/phpmyadmin/usr/share/phpmyadmin/libraries/phpseclib
-
-	# include Debian marker in version string
-	sed -ri "/set..PMA_VERSION/ s/'([-0-9a-z.]+)'/'\\1deb$(REVISION)'/" \
-	    debian/phpmyadmin/usr/share/phpmyadmin/libraries/classes/Config.php
+	rm -rf debian/phpmyadmin/usr/share/phpmyadmin/libraries/phpsecli
