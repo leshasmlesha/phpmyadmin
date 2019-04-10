@@ -1,5 +1,5 @@
-VER = 4_8_5
-VERIN = 4.8.5
+VER="4_8_5"
+VERIN="4.8.5"
 git clone https://github.com/phpmyadmin/phpmyadmin.git source
 cd source
 git checkout RELEASE_$VER
