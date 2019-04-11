@@ -31,7 +31,7 @@ cd ../
 rm -rf po/*.po*
 cp ../po/* po
 cd ..
-dpkg-buildpackage -uc -us
+dpkg-buildpackage
 cd ../
 rm -rf phpmyadmin
 
