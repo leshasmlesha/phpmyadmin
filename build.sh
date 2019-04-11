@@ -8,6 +8,13 @@ composer update --no-dev
 scripts/update-po
 rm -rf *
 git checkout .
+cd themes
+curl -O https://files.phpmyadmin.net/themes/metro/2.8/metro-2.8.zip
+unzip metro-*
+rm metro-*
+cd ../
+git add .
+git commit -m 'Add changed from leshasmlesha'
 scripts/create-release.sh $VERIN release
 cp release/phpMyAdmin-$VERIN-source.tar.xz ../phpmyadmin_$VERIN.orig.tar.xz
 cd ..
