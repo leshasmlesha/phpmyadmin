@@ -7,6 +7,7 @@ if [ -d "$LINK_OR_DIR" ]; then
 fi
 cp source backup
 cd source
+git pull
 git checkout RELEASE_$VER
 git checkout -b release
 composer update --no-dev
