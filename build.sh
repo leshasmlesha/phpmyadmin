@@ -1,6 +1,11 @@
 VER="4_8_5"
 VERIN="4.8.5"
-git clone https://github.com/phpmyadmin/phpmyadmin.git source
+if [ -d "$LINK_OR_DIR" ]; then 
+  cp backup source
+  else
+  git clone https://github.com/phpmyadmin/phpmyadmin.git source
+fi
+cp source backup
 cd source
 git checkout RELEASE_$VER
 git checkout -b release
