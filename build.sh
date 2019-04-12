@@ -1,13 +1,28 @@
 VER="4_8_5"
 VERIN="4.8.5"
-if [ -d "$LINK_OR_DIR" ]; then 
-  cp backup source
+rm -rf phpmyadmin*
+if [ -d "source" ]; then
+rm -rf source
+  fi
+if [ -d "$HOME/.cache/phpmyadmin/backup" ]; then
+mv $HOME/.cache/phpmyadmin/backup backup
+  fi
+if [ -d "backup" ]; then
+  cd backup
+  git pull
+  cd ..
+  cp -r backup source
+  if [ ! -d "$HOME/.cache/phpmyadmin" ]; then
+  mkdir $HOME/.cache
+  mkdir $HOME/.cache/phpmyadmin
+  fi
+  mv backup $HOME/.cache/phpmyadmin/backup
   else
+  rm -rf source
   git clone https://github.com/phpmyadmin/phpmyadmin.git source
+  cp -r source backup
 fi
-cp source backup
 cd source
-git pull
 git checkout RELEASE_$VER
 git checkout -b release
 composer update --no-dev
@@ -18,8 +33,8 @@ cd themes
 curl -O https://files.phpmyadmin.net/themes/metro/2.8/metro-2.8.zip
 unzip metro-*
 rm metro-*
-cd ../
-git add .
+cd ..
+git add -f themes/metro
 git commit -m 'Add changed from leshasmlesha'
 scripts/create-release.sh $VERIN release
 cp release/phpMyAdmin-$VERIN-source.tar.xz ../phpmyadmin_$VERIN.orig.tar.xz
