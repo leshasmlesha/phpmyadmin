@@ -22,7 +22,7 @@
 
 `sudo apt-get update`
 
-`sudo apt-get install php-curl curl git composer yarn p7zip-full fakeroot`
+`sudo apt-get install php-curl curl git composer yarn p7zip-full fakeroot unzip`
 
 `git config --global user.email "you@example.com"`
 
