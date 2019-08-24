@@ -30,7 +30,7 @@ scripts/update-po
 rm -rf *
 git checkout .
 cd themes
-curl -O https://files.phpmyadmin.net/themes/metro/2.8/metro-2.8.zip
+curl -O https://files.phpmyadmin.net/themes/metro/2.8.1/metro-2.8.1.zip
 unzip metro-*
 rm metro-*
 cd ..
@@ -59,7 +59,7 @@ cd ../
 rm -rf po/*.po*
 cp ../po/* po
 cd ..
-dpkg-buildpackage
+dpkg-buildpackage -rfakeroot
 cd ../
 rm -rf phpmyadmin
 
