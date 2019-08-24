@@ -1,5 +1,5 @@
-VER="4_8_5"
-VERIN="4.8.5"
+VER="4_9_0_1"
+VERIN="4.9.0.1"
 rm -rf phpmyadmin*
 if [ -d "source" ]; then
 rm -rf source
@@ -44,7 +44,7 @@ curl -O http://archive.ubuntu.com/ubuntu/pool/universe/p/phpmyadmin/phpmyadmin_4
 mkdir phpmyadmin
 tar xf phpmyadmin_4.6.6-5.debian.tar.xz -C phpmyadmin
 rm phpmyadmin_4.6.6-5.debian.tar.xz
-#curl https://files.phpmyadmin.net/phpMyAdmin/4.8.5/phpMyAdmin-4.8.5-source.tar.xz -o phpmyadmin_4.8.5.orig.tar.xz
+#curl https://files.phpmyadmin.net/phpMyAdmin/$VERIN/phpMyAdmin-$VERIN-source.tar.xz -o phpmyadmin_$VERIN.orig.tar.xz
 tar xf phpmyadmin_$VERIN.orig.tar.xz -C phpmyadmin --strip-components=1
 rm phpmyadmin/debian/patches/Truncate-only-long-passwords.patch
 cd phpmyadmin/debian/

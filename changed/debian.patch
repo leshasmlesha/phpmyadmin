@@ -6,22 +6,32 @@ From: Alex Dev Sm <leshasmlesha@gmail.com>
 Forwarded: not-needed
 --- a/libraries/vendor_config.php
 +++ b/libraries/vendor_config.php
-@@ -22,12 +22,13 @@
+@@ -22,7 +22,7 @@
  /**
   * Directory where cache files are stored.
   */
 -define('TEMP_DIR', './tmp/');
-+define('TEMP_DIR', '/tmp/');
++define('TEMP_DIR', '/var/lib/phpmyadmin/tmp/');
  
  /**
   * Path to changelog file, can be gzip compressed. Useful when you want to
+@@ -28,13 +28,13 @@
+  * Path to changelog file, can be gzip compressed. Useful when you want to
   * have documentation somewhere else, eg. /usr/share/doc.
   */
-+
- define('CHANGELOG_FILE', './ChangeLog');
+-define('CHANGELOG_FILE', './ChangeLog');
++define('CHANGELOG_FILE', '/usr/share/doc/phpmyadmin/changelog.Debian.gz');
+
+ /**
+  * Path to license file. Useful when you want to have documentation somewhere
+  * else, eg. /usr/share/doc.
+  */
+-define('LICENSE_FILE', './LICENSE');
++define('LICENSE_FILE', '/usr/share/doc/phpmyadmin/copyright');
  
  /**
-@@ -46,7 +47,7 @@
+  * Directory where SQL scripts to create/upgrade configuration storage reside.
+@@ -46,7 +46,7 @@
   * It is not used directly in code, just a convenient
   * define used further in this file.
   */
@@ -30,7 +40,7 @@ Forwarded: not-needed
  
  /**
   * Filename of a configuration file.
-@@ -64,6 +65,31 @@
+@@ -64,6 +64,31 @@
  define('CUSTOM_FOOTER_FILE', CONFIG_DIR . 'config.footer.inc.php');
  
  /**

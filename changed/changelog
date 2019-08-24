@@ -1,3 +1,9 @@
+phpmyadmin (4:4.9.0.1-0) stable; urgency=medium
+
+  * Update phpmyadmin to 4.9.0.1
+
+ -- Alex Dev Sm <leshasmlesha@gmail.com>  Tue, 24 Aug 2019 20:44:06 +0200
+ 
 phpmyadmin (4:4.8.5-0) stable; urgency=medium
 
   * Update phpmyadmin to 4.8.5
