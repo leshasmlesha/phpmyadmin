@@ -1,5 +1,5 @@
-VER="4_9_0_1"
-VERIN="4.9.0.1"
+VER="4_9_1"
+VERIN="4.9.1"
 rm -rf phpmyadmin*
 if [ -d "source" ]; then
 rm -rf source
